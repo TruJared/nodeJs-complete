@@ -1,0 +1,12 @@
+main {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 6rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+}

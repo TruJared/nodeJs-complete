@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/add-chore.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__list">
+          <li class="main-header__list-item"><a href="/">Home</a></li>
+          <li class="main-header__list-item">
+            <a class="active" href="/admin/add-chore">Add Chore</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="header-title">Add Chores</h1>
+      <div class="form-div">
+        <form action="/admin/add-chore" method="post">
+          <div>
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Assigned To:"/>
+          </div>
+          <div>
+            <label for="chore":</label>
+            <input type="text" id="chore" name="chore" placeholder="Chore:"/>
+          </div>
+          <div>
+            <label for="reward"></label>
+            <input type="text" id="reward" name="reward" placeholder="Reward:" />
+          </div>
+          <div>
+            <button type="submit">Create Chore</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
