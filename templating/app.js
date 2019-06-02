@@ -18,6 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 // 404
-app.use('/', (req, res) => res.render('404', { title: '4💩4' }));
+app.use('/', (req, res) => res.render('404', { pageTitle: '4💩4' }));
 
 app.listen(3000, () => console.log('server now listening on 3000'));
