@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const { adminRoutes } = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+const { get404 } = require('./controllers/error.js');
 
 const app = express();
 
@@ -18,6 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 // 404
-app.use('/', (req, res) => res.render('404', { pageTitle: '4💩4' }));
+app.use('/', get404);
 
 app.listen(3000, () => console.log('server now listening on 3000'));
