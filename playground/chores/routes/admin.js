@@ -1,11 +1,13 @@
 const express = require('express');
-const path = require('path');
-const rootDir = require('../util/path');
 
 const router = express.Router();
 
+const choreList = [];
+
+//  TODO add custom path  //
+
 router.get('/add-chore', (req, res) => {
-  res.sendFile(path.join(rootDir, 'views', 'add-chore.html'));
+  res.render('add-chore');
 });
 
 router.post('/add-chore', (req, res) => {
@@ -13,4 +15,7 @@ router.post('/add-chore', (req, res) => {
   res.redirect('/');
 });
 
-module.exports = router;
+module.exports = {
+  adminRoutes: router,
+  choreList,
+};

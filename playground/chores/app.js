@@ -2,9 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const choreRoute = require('./routes/chores');
-const adminRoute = require('./routes/admin');
+const { adminRoutes } = require('./routes/admin');
 
 const app = express();
+
+// template engine
+app.set('view engine', 'pug');
+app.set('views', 'views');
 
 // enable body parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,12 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes for sub pages //
-app.use('/admin', adminRoute);
+app.use('/admin', adminRoutes);
 
 // default route //
 app.use(choreRoute);
 
 //*  404  *//
-app.use('/', (req, res) => res.status(404).sendFile(path.join(__dirname, 'views', '404.html')));
+app.use('/', (req, res) => res.render('404'));
 
 app.listen(1234, () => console.log('server started on 1234'));
