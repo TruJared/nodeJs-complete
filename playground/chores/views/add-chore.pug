@@ -1,35 +1,19 @@
-extents content
-    <main>
-      <h1 class="header-title">Add Chores</h1>
-      <div class="form-div">
-        <form action="/admin/add-chore" method="post">
-          <div>
-            <label for="name"></label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Assigned To:"
-            >
-          </div>
-          <div>
-            <label for="chore"></label>
-            <input type="text" id="chore" name="chore" placeholder="Chore:" />
-          </div>
-          <div>
-            <label for="reward"></label>
-            <input
-              type="text"
-              id="reward"
-              name="reward"
-              placeholder="Reward:"
-            />
-          </div>
-          <div>
-            <button type="submit">Create Chore</button>
-          </div>
-        </form>
-      </div>
-    </main>
-  </body>
-</html>
+extends layouts/main.pug
+
+block content
+  main
+    div
+      h1.header-title Add Chores
+      .form-div
+        form(action="/admin/add-chore" method="post")
+          div
+            label(for="name")
+            input(type="text" id="name" name="name" placeholder="Assigned To:")
+          div
+            label(for="chore")
+            input(type="text" id="chore" name="chore" placeholder="Chore:")
+          div
+            label(for="reward")
+            input(type="text" id="reward" name="reward" placeholder="Reward:")
+          div
+            button(type="submit") Create Chore

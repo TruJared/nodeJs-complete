@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/pages/chores.css" />
-    <title>Chores</title>
-  </head>
-  <body>
-    <header class="main-header">
-      <nav class="main-header__nav">
-        <ul class="main-header__list">
-          <li class="main-header__list-item">
-            <a class="active" href="/">Home</a>
-          </li>
-          <li class="main-header__list-item">
-            <a href="/admin/add-chore">Add Chore</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main><h1 class="header-title">Time To Do The Chores</h1></main>
-  </body>
-</html>
+extends layouts/main.pug
+
+block content
+  main
+    h1.header-title Time To Do The Chores

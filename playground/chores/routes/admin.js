@@ -7,7 +7,7 @@ const choreList = [];
 //  TODO add custom path  //
 
 router.get('/add-chore', (req, res) => {
-  res.render('add-chore');
+  res.render('add-chore', { pageTitle: 'addChore', styleSheet: '/styles/pages/add-chore.css' });
 });
 
 router.post('/add-chore', (req, res) => {
