@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const choreRoute = require('./routes/chores');
 const { adminRoutes } = require('./routes/admin');
+const { get404 } = require('./controllers/errorController');
 
 const app = express();
 
@@ -22,6 +23,6 @@ app.use('/admin', adminRoutes);
 app.use(choreRoute);
 
 //*  404  *//
-app.use('/', (req, res) => res.render('404', { pageTitle: 404, styleSheet: '/styles/pages/404.css' }));
+app.use('/', get404);
 
 app.listen(1234, () => console.log('server started on 1234'));

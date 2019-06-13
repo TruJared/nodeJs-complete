@@ -3,3 +3,7 @@ extends layouts/main.pug
 block content
   main
     h1.header-title Time To Do The Chores
+    each chore in choresList
+      p Person Name: #{chore.name}
+      p Chore Assigned: #{chore.chore}
+      p Payment: #{chore.reward}

@@ -2,18 +2,13 @@ const express = require('express');
 
 const router = express.Router();
 
-const choreList = [];
+const { getAddChorePage, addChore, choreList } = require('../controllers/choresController');
 
 //  TODO add custom path  //
 
-router.get('/add-chore', (req, res) => {
-  res.render('add-chore', { pageTitle: 'addChore', styleSheet: '/styles/pages/add-chore.css' });
-});
+router.get('/add-chore', getAddChorePage);
 
-router.post('/add-chore', (req, res) => {
-  console.log(req.body);
-  res.redirect('/');
-});
+router.post('/add-chore', addChore);
 
 module.exports = {
   adminRoutes: router,

@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('chores');
-});
+const { getChores } = require('../controllers/choresController');
+
+router.get('/', getChores);
 
 module.exports = router;

@@ -4,13 +4,12 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width", initial-scale="1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="/styles/main.css")
-    if styleSheet
-      link(rel="stylesheet", href= `${styleSheet}`)
     if pageTitle
       <title>#{pageTitle}</title>
     else
      <title>"Chore App"</title>
+    link(rel="stylesheet", href="/styles/main.css")
+    block styles
   body
   header.main-header
     nav.main-header__nav
